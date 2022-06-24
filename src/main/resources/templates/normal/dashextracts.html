@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<section>
+
+<div class="container bg-light mt-5"th:each="n:${myextracts}" style="margin-left:300px;width:700px">
+
+<div class="jumbotron jumbotron-fluid"style="padding-top:20px;">
+  <div class="container">
+  
+  
+  <h5 th:text ="${n.subject}"></h5>
+  
+      <!-- <img src="#" alt=""style="height: 300px; width: 600px;"   th:src="@{'/img/'+${n.eimage}}" ></img>  --> 
+    
+    <img src="#" alt=""style="height: 300px; width: 600px;"   th:src="${n.eimage}" ></img>
+    
+    <p class="lead" th:utext="${n.details}"></p>
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+</section>
+
+
+</section>
+
+</body>
+</html>

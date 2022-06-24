@@ -1,0 +1,56 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="newbase::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+<h1>Form to send a mail</h1>
+
+<form action="#" 
+							  th:object="${emaildata}"
+							  
+							  method="POST"
+							  th:action="@{/sendmail}"
+							  class="mt-2"
+						>	
+	
+	
+	
+	
+							  
+  <div class="form-group">
+  
+    <label for="exampleInputEmail1">to</label>
+    <input type="text" class="form-control"  name="to" placeholder="Enter email">
+  </div>
+  
+  
+  
+  <div class="form-group">
+    <label >subject</label>
+    <input type="text" class="form-control" name="body"  >
+  </div>
+  
+  <div class="form-group">
+    <label >subject</label>
+    <input type="text" class="form-control"name="subject" >
+  </div>
+  
+  <div class="form-group">
+    <label >yourid</label>
+    <input type="text" class="form-control"name="id" >
+  </div>
+ 						
+						
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+						
+
+
+</section>
+</body>
+</html>

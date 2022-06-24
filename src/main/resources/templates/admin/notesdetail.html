@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/baseadmin::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<section>
+<h1 th:text="${title}"style="margin-left:50px"></h1>
+
+
+
+<!-- <img src="#" alt=""style="height: 400px; width: 700px;margin-left:50px"  th:src="@{'/img/'+${note.image}}" ></img> -->
+<img src="" th:src="${note.image}"style="height: 400px; width: 700px;margin-left:50px" alt="profile photo" />
+
+<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">#ID</th>
+					      <th scope="col"><span th:text="${note.cId}"></span></th>
+					      
+					    </tr>
+					  </thead>
+					  <tbody>
+					  
+					  <tr>
+					  <th scope="row">Author</th>
+					   <td><span th:text="${writer}"></span></td>
+					  
+					  
+					  </tr>
+					    <tr>
+					      <th scope="row">Title</th>
+					      <td><span th:text="${note.title}"></span></td>
+					     
+					    </tr>
+					    
+					    
+					      <tr>
+					      <th scope="row">Description</th>
+					      <td><span th:text="${note.description}"></span></td>
+					     
+					    </tr>
+					    
+					      <tr>
+					      <th scope="row">subject</th>
+					      <td><span th:text="${note.subject}"></span></td>
+					     
+					    </tr>
+					    
+					     <tr>
+					      <th scope="row">Note</th>
+					      <td>  
+					      
+					      
+							<div class="bg-light border" style="height:auto;width:400px;display:flex;flex-direction:column">
+						<th:block th:utext="${note.note}"></th:block>
+						
+						</div>
+					      
+					      </td>
+					     
+					    </tr>
+					   
+					    
+					  </tbody>
+					  
+					  
+				
+					  
+					  
+					</table>
+					
+				<a href="#"th:href="@{'/admin/subnote/'+${note.cId}}">	
+					<button class="btn btn-primary"th:if="${username==writer}">
+					
+				
+					Add subnote
+					
+					</button>
+					
+					</a>
+					
+					<a href="#" th:href="@{'/admin/showextracts/'+${note.cId}}">Get more details</a>
+					
+					
+					
+					
+
+
+
+
+</section>
+</body>
+</html>

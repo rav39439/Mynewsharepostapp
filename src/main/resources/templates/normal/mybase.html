@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+
+
+<title>Search friends</title>
+</head>
+
+		<section>	
+					
+				<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+  	               	     <p class="text-center" th:text="${session.message.content}"></p>  	               	     
+  	               	     <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		             </div>	
+					
+					<form action="#" th:action="@{/user/search}"method="POST"th:object="${friend}">
+					<div class="input-group">
+            <div class="form-outline">
+               <input type="search" name="searchcontent" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+              </div>
+             <button type="submit" class="btn btn-primary"> search </button>
+              </div>
+              
+              </form>
+					
+					
+			</section>			
+					
+			
+			
+			
+		
+
+
+</body>
+</html>

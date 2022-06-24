@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<section>
+
+<div class="search-container my-3">
+<h1 th:text="${username}"></h1>		
+
+<table class="table">
+  <thead>
+    <tr>
+    
+      <th scope="col">fid</th>
+      <th scope="col">friendname</th>
+            <th scope="col">rid</th>
+      
+       <th scope="col">action</th>
+      
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr  th:each="n:${friends}">
+    
+   
+      <th  th:if="${n.allfriends!=username&&n.allfriends!=null}" scope="row"th:text="${n.friendid}"></th>
+      <td  th:if="${n.allfriends!=username&&n.allfriends!=null}" th:text="${n.allfriends}"></td>
+       <td  th:if="${n.allfriends!=username&&n.allfriends!=null}" th:text="${n.fid}"></td>
+      
+      
+      
+    	<td  th:if="${n.allfriends!=username&&n.allfriends!=null}" class="nav-item"><a class="nav-link " href="#"
+				
+					th:href="@{'/user/getnotes/'+${n.friendid}}"
+					tabindex="-1" aria-disabled="true">Articles</a></td>
+					
+					
+					<td  th:if="${n.allfriends!=username&&n.allfriends!=null}" class="nav-item"><a class="nav-link " href="#"
+				
+					th:href="@{'/user/chat/'+${n.friendid}}"
+					tabindex="-1" aria-disabled="true">chat</a></td>
+     
+      
+      
+    </tr> 
+    
+    
+   
+  
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+
+</section>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<section>
+
+<div class="container bg-light mt-5"th:each="n:${myextracts}" style="margin-left:400px;width:700px">
+
+<div class="jumbotron jumbotron-fluid"style="padding-top:20px;">
+  <div class="container">
+  
+  
+  <h5 th:text ="${n.subject}"></h5>
+  
+    
+   <!--   <img src="#" alt=""style="height: 300px; width: 600px;"   th:src="@{'/img/'+${n.eimage}}" ></img>-->
+   
+   <img src="#" alt=""style="height: 300px; width: 600px;"   th:src="${n.eimage}" ></img>
+    
+    <p class="lead bg-white" th:utext="${n.details}"></p>
+  </div>
+</div>
+
+
+			      <a href="#" th:href="@{'/user/deleteextract/'+${n.eId}}" class="btn btn-danger btn-sm">DeleteExtract</a>
+
+
+<form method="post" th:action="@{'/user/extractupdate/'+${n.eId}}" class="mt-2">
+			      
+			     		 <button type="submit" class="btn btn-primary btn-sm">Update</button>
+			       
+			       </form>
+</div>
+
+</section>
+
+</body>
+</html>

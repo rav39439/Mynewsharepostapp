@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script src=https://code.jquery.com/jquery-3.6.0.js></script>
+
+
+<h1>Form test</h1>
+<form id="newform"onsubmit="return myform(this)">
+<label>Username</label>
+<input type="text" name="name" class="form-group"id="name">
+
+<label>Degree</label>
+<input type="text"name="degree" class="form-group"id="degree">
+
+<label>filename</label>
+<input type="text"name="myfile" class="form-group"id="myfile">
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</form> 
+
+
+<p id="newresponse"></p>
+
+
+<h1>Upload files to firebase</h1>
+<input type="file" id="photo" />
+<button onclick="uploadImage()">Upload Image</button>
+<img src="" id="newimage">
+
+ 
+ <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+  
+  		<script th:src="@{/js/script.js}"></script>
+  
+
+</body>
+</html>

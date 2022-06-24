@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+<div class="search-container my-3">
+		
+
+<table class="table">
+  <thead>
+    <tr>
+    
+      <th scope="col">friendid</th>
+      <th scope="col">friendreqname</th>
+       <th scope="col">fid</th>
+      
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr  th:each="n:${friends}">
+    
+   
+      <th th:if="${n.friendreqname!=null}"scope="row"th:text="${n.friendid}"></th>
+       <td th:text="${n.friendreqname}"></td>
+       <td th:if="${n.friendreqname!=null}" th:text="${n.fid}"></td>
+      
+      
+      <td>
+      <form th:if="${n.friendreqname!=null}" method="post" th:action="@{'/user/updatefriend/'+${n.fid}}" class="mt-2"th:object="${myfriend}">
+			      <input type="hidden" name="allfriends" th:value="${n.friendreqname}">
+			      			      <input type="hidden" name="friendid" th:value="${n.friendid}">
+			      
+			     		 <button th:if="${n.friendreqname != ''}" type="submit" class="btn btn-primary btn-sm">accept</button>
+			       
+			       </form>
+      </td>
+      
+      
+    </tr> 
+    
+    
+   
+  
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+
+</section>
+</body>
+</html>

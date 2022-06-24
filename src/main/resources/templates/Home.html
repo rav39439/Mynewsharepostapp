@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="newbase::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1" >
+<title>Insert title here</title>
+
+<script src=https://code.jquery.com/jquery-3.6.0.js></script>
+
+
+</head>
+<body>
+
+<section>
+
+<h1>Welcome to the dashboard</h1>
+
+
+<div class="container "th:each="n,iter:${mybooks}">
+<div class="jumbotron jumbotron-fluid bg-light" >
+  <div class="container border mt-4 "th:if="${n.status=='show'}">
+    <h1 class="display-4"th:text="${n.title}"></h1>
+    
+    <h4 th:text="${n.subject}"></h4>
+    
+    <!-- <img src="#" alt=""style="height: 400px; width: 600px;"  th:src="@{'/img/'+${n.image}}" ></img> -->
+    
+    
+        <img src="#" alt=""style="height: 400px; width: 600px;"  th:src="${n.image}" ></img>
+        
+                        <script src=https://code.jquery.com/jquery-3.6.0.js></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>	
+        <form onclick="return getdatan(this)">
+             <div class="float-end pt-1">
+            <input type="hidden" name="nid" th:value="${n.cId}">
+            
+              <button type="submit" class="btn btn-primary btn-sm">comments</button>
+            </div>           
+            </form>
+            
+            
+            
+                        <script th:src="@{/js/script.js}"></script>
+    
+    <p class="lead"th:utext="${n.note}"></p>
+    
+        <p th:text="'posted by'+' '+${n.author}"></p>
+    
+    
+    <!--  <p th:text="'posted by'+${usernames[1]}"></p>-->
+    
+    <a href="#" th:href="@{'/user/getextracts/'+${n.cId}}">Get more details</a>
+    
+    
+            <div class="card bg-white mb-4">
+    
+    <div class="card-body " th:id="'mycardbody' + ${n.cId}"  style="margin-left:0">
+           
+
+           
+
+            
+          </div>
+              </div>
+    
+    
+    
+    
+            
+    
+   
+  </div>
+</div>
+</div>
+
+
+
+
+ 
+ 
+ 
+</section>
+
+
+
+
+</body>
+</html>

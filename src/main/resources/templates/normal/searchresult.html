@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+
+<div th:if="${user}"class="container">
+<div th:if="${user}">
+<p class="lead" th:text="${user.name}"></p>
+</div>
+
+
+
+<div th:if="${user}">
+<p  class="lead"th:text="${user.about}"></p>
+</div>
+
+
+
+
+<form action="#" th:action="@{/user/sendrequest}" method="POST"th:object="${friend}">
+
+<input type="hidden" name="friendid"  class="form-control"th:value="${user.id}" />
+
+<button type="submit">friend request</button>
+</form>
+
+
+</div>
+
+
+<div th:unless="${user}"class="container">
+
+<div th:unless="${user}">
+<p th:text="'no user'">No user found</p>
+</div>
+</div>
+
+
+</section>
+</body>
+</html>

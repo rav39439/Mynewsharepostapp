@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section>
+		
+		
+		<div class="card mr-3 ml-3">
+		
+			<div class="card-body">
+			
+				<h1 class="text-center">Add note</h1>
+				
+				<div class="container-fluid mt-1">
+				
+				<div class="row">
+					
+					<div class="col-md-8 offset-md-2">
+					
+				<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>	
+					
+				<script src=https://code.jquery.com/jquery-3.6.0.js></script>
+					
+					
+						<form action="#" 
+							  th:object="${book}"
+							  enctype="multipart/form-data"
+							  method="POST"
+							  th:action="@{/user/postnotes}"
+							  class="mt-2"
+						>
+						
+						
+						<!-- First Name  -->
+						
+						<div class="input-group">
+						
+							<div class="input-group-prepend">
+							
+								<div class="input-group-text ">
+										
+										
+									
+								</div>
+							
+							</div>
+						
+							<input required type="text" id="title" name="title" placeholder="Enter title here" class="form-control" />
+						
+						</div>
+						
+						
+						<!-- Second Name  -->
+						
+						<div class="input-group mt-3">
+						
+							<div class="input-group-prepend">
+							
+								<div class="input-group-text ">
+										
+										
+									
+								</div>
+							
+							</div>
+						
+							<input required type="text" id="subject" name="subject" placeholder="Enter Subject of the topic here" class="form-control" />
+						
+						</div>
+						
+						
+						<div class="input-group mt-3">
+						
+							<div class="input-group-prepend">
+							
+								<div class="input-group-text ">
+										
+										
+									
+								</div>
+							
+							</div>
+						
+							<input type="text" readonly="true" id="author" name="author" placeholder="Enter author of the topic here" th:value="${name}"class="form-control" />
+						
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<!-- Phone Field -->
+						<div class="input-group mt-3">
+						
+							<div class="input-group-prepend">
+							
+								<div class="input-group-text ">
+										
+										
+									
+								</div>
+							
+							</div>
+						
+							<input required min="10"  type="text" id="description" name="description" placeholder="Enter description Number  here" class="form-control" />
+						
+						</div>
+						
+						
+						<!-- Email Field  -->
+						
+						<div class="input-group mt-3">
+						
+							<div class="input-group-prepend">
+							
+								<div class="input-group-text ">
+										
+									
+									
+								</div>
+							
+							</div>
+						
+							<div class="form-group mt-3">
+							
+							<textarea id="mytextarea" placeholder="Enter note" name="note"  class="form-control"  rows="10"style="height: 300px; width: 770px;"></textarea>
+						
+						</div>
+						
+						</div>
+						
+						
+						<select class="form-select" aria-label="Default select example" name="status">
+                   <option value="show">show</option>
+               <option value="hide">hide</option>
+             
+                            </select>
+						
+						
+						
+					
+						
+					
+						
+					<!-- 	
+						
+						<div class="custom-file">
+							<input type="file" name="profileImage" />
+						
+						</div>
+						
+						---------------- -->
+<input type="hidden"name="myfile" class="form-group"id="myfile">
+
+						
+						
+						<div class="container text-center">
+							
+						 <button class="btn btn-outline-primary">Save note</button>
+						
+						</div>
+						
+						
+						
+						
+						</form>
+					<script th:src="@{/js/script.js}"></script>
+					
+					<h4>Upload Image</h4>
+					
+					
+<input type="file" id="photo" />
+<button onclick="uploadImage()">Upload Image</button>
+<img src="" id="newimage"><br><br>
+
+<label>Your image upload status</label>
+ <p id="pic">not uploaded</p>
+					
+					
+					
+					</div>
+				
+				
+				</div>
+				
+				</div>
+			
+			
+			</div>
+		
+		</div>
+		
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		
+		<script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+    
+      <script>
+        $(document).ready(() => {
+          $(".item").removeClass("active");
+          $("#add-link").addClass("active");
+          
+          
+         
+          
+          
+          
+          
+          
+          
+          
+        });
+      </script>
+		
+	</section>
+	
+	
+</body>
+</html>

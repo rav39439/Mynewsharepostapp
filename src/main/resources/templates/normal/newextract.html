@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>	
+					
+				<script src=https://code.jquery.com/jquery-3.6.0.js></script>
+<form method="POST" action="#" th:action="@{'/user/postnewextract/'+${noteid}}" th:object="${myextract}"	enctype="multipart/form-data"
+>
+  
+  
+  
+  	<!-- <div class="custom-file mt-5">
+		<input required type="file" name="profileImage"/>
+						
+	</div> -->
+		
+	<label>filename</label>
+<input type="text"name="myfile" class="form-group"id="myfile">
+	
+	  <div class="form-group mt-3">
+		
+  <input required type="text" id="subject" name="subject" placeholder="Enter topic here" class="form-control" />
+	</div>	
+						
+					
+						
+  <div class="form-group mt-3">
+    <label>Details</label>
+							
+							<textarea id="mytextarea" placeholder="Enter note" name="details"  class="form-control"  rows="10"style="height: 300px; width: 770px;"></textarea>
+						
+						</div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script th:src="@{/js/script.js}"></script>
+					
+					<h1>Upload Image</h1>
+<input type="file" id="photo" />
+<button onclick="uploadImage()">Upload Image</button>
+<img src="" id="newimage">
+
+
+
+
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		
+		<script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+    
+      <script>
+        $(document).ready(() => {
+          $(".item").removeClass("active");
+          $("#add-link").addClass("active");
+        });
+      </script>
+</section>
+</body>
+</html>
