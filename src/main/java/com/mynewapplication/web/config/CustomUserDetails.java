@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,11 +22,14 @@ public class CustomUserDetails implements UserDetails {
 	}
 
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
+	public List<? extends GrantedAuthority> getAuthorities() {
 
 		SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
 
-		List<SimpleGrantedAuthority> mylist = new ArrayList<>();
+		
+		
+		
+		List<GrantedAuthority> mylist = new ArrayList<>();
 		mylist.add(simpleGrantedAuthority);
 		return mylist;
 
