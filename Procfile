@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar -Dserver.port=$PORT target/mynewsharepostapp.jar
+web: java $JAVA_OPTS -jar -Dserver.port=$PORT target/mynewapplication-0.0.1-SNAPSHOT.jar
