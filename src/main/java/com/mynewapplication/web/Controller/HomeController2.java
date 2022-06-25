@@ -298,16 +298,16 @@ public class HomeController2 {
 		// model.addAttribute("newid",user.getId());
 		return "Home";
 	}
-
-	@RequestMapping("/testajax")
-
-	public String handlerequest(Model m, InfoUser infouser) {
-
-		m.addAttribute("infouser", infouser);
-
-		return "newform";
-	}
-
+//---------------------------------testing ajax-----------------------------------------------
+//	@RequestMapping("/testajax")
+//
+//	public String handlerequest(Model m, InfoUser infouser) {
+//
+//		m.addAttribute("infouser", infouser);
+//
+//		return "newform";
+//	}
+//------------------------------------------------------------------------------------------------
 	// @PostMapping("/saveuser")
 	// public @ResponseBody String handlepost(@RequestParam("name")String username
 	// ,@RequestParam("degree") String Degree
