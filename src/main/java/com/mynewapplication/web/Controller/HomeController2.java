@@ -42,7 +42,7 @@ import com.mynewapplication.web.helpers.Message;
 import com.sendgrid.Response;
 
 @Controller
-public class HomeController {
+public class HomeController2 {
 
 	Random random = new Random(1000);
 	@Autowired
