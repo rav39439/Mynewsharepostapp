@@ -9,7 +9,6 @@ import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.mynewapplication.web.entities.User;
 
 public class CustomUserDetails implements UserDetails {
