@@ -63,7 +63,7 @@ public class HomeController {
 	
 	
 //	
-	@RequestMapping("/")
+	@RequestMapping("/Newhome")
 	public String Myhome(Model model, Principal principal) {
 		model.addAttribute("title", "User Dashboard");
 		//String name=principal.getName();
@@ -91,7 +91,7 @@ public class HomeController {
 	
 	
 	
-	@RequestMapping("/about")
+	@RequestMapping("/")
 	public String about(Model model) {
 		
 		
